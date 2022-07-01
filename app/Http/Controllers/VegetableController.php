@@ -86,6 +86,7 @@ class VegetableController extends Controller
         return view('detail', compact('vegetables'));
     }
 
+
     public function show(Vegetable $vegetable)
     {
         //

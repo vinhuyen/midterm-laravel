@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('vegetables', VegetableController::class);
+
+
+
+Route::get("/detail/{vegetable_id}", [VegetableController::class, "detail"])->name("detail");

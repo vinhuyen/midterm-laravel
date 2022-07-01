@@ -14,6 +14,9 @@
             object-fit: cover;
 
         }
+        a{
+            text-decoration: none;
+        }
         .layout_wrapper{
             width: 90%;
             display: flex;
@@ -52,6 +55,8 @@
             text-transform: uppercase;
             font-weight: 600;
             text-align: center;
+            text-decoration: none;
+
 
         }
         .price{
@@ -79,20 +84,24 @@
 
     <div class="vegetable__wrapper">
         @foreach($vegetables as $vegetable)
-        <div class="vegetable__cart">
-            <div class="image__style">
-                <img src="/images/{{$vegetable->image}}" alt="">
-            </div>
-            <div class="vegetable__info">
-                <h3>{{$vegetable->vegetable}}</h3>
-                <div class="price">
-                    <span class="new__price">{{$vegetable->new_price}}</span>
-                    <span class="old__price">{{$vegetable->old_price}}</span>
+            <a href="{{ route('detail', $vegetable->vegetable_id)}} ">
+                <div class="vegetable__cart">
+                    <div class="image__style">
+                        <img src="/images/{{$vegetable->image}}" alt="">
+                    </div>
+                    <div class="vegetable__info">
+                        <h3>{{$vegetable->vegetable}}</h3>
+                        <div class="price">
+                            <span class="new__price">{{$vegetable->new_price}}</span>
+                            <span class="old__price">{{$vegetable->old_price}}</span>
+                        </div>
+
+                    </div>
                 </div>
-                <a href="detail/{{$vegetable->vegetable_id}}">Detail</a>
-            </div>
-        </div>
+            </a>
         @endforeach
+
+
     </div>
 </div>
 @endsection
